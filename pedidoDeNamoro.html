@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>PEDIDO DE NAMORO OU SLÁ</title>
+
+    <style>
+     
+
+          /* aqui tá as paradinha da animação, qqlr coisa se quiser mudar tamanho ou alterar a imagem mexe aq */
+          
+      body{
+        background-color: lightpink;
+        background-image: url('https://mystickermania.com/cdn/stickers/kirby/kirby-burger-512x512.png');
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        -webkit-animation: snow 10s linear infinite;
+        -moz-animation: snow 10s linear infinite;
+        -ms-animation: snow 10s linear infinite;
+        animation: snow 10s linear infinite;
+      }
+
+        /* detalhes da animação, n sei mexer direito nisso aq mas futricando dá pra mexer tempo, orientação e etc */
+
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+                  /* painel Dos botões e etc*/
+
+     .painel{
+        margin: auto;
+        background-color: rgb(230, 247, 246);
+        width: 500px;
+        height: 500px;
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      #sim{
+
+        height: 40px;
+        width: 60px;
+        background-color: black;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        margin-left: -60px;
+        margin-bottom: 10px;
+      }
+
+
+
+      #nao{
+        position: absolute;
+        height: 40px;
+        width: 60px;
+        background-color: black;
+        border-radius: 10px;
+        border: 2px solid white;
+        color: white;
+        margin-left: 10px;
+
+      }
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+
+  <div class="painel">
+  
+    <h1> Oi -PREENCHER- Meu Amorzinho </h1>
+
+
+    <h5>Aceita namorar com eu?</h5>
+
+            <!--aqui está o id do botão com onclick no sim, q executa a ação de abrir o aviso, 
+              e o onmouseover, pro botão não fugir sempre que o cursos passar por cima -->
+    <button id="sim" onclick="parabens()"> Sim! </button>
+    <button onmouseover="fuja()" id= "nao"> Não! </button>
+
+          <!--gif na caixa de texto principal-->
+    <img src="https://media0.giphy.com/media/bdac11tTqTiK3gYlrk/giphy.gif?cid=82a1493b9ecy8iytq29sol0ka0itprx9wqxxhxzr14qne43t&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="", width="500px" border-radius="100px" height="315px";
+
+
+
+
+  </div>
+  
+  <script> 
+          //função do botão fujão, a função permite q ele se movimente livremente pela tela por causa do random ali e etc
+    function fuja(){
+      var botaoNao = document.getElementById("nao")
+
+      var larguraJanela = window.innerWidth;
+      var alturaJanela = window.innerHeight;
+
+      var maxX = larguraJanela - botaoNao.offsetWidth;
+      var maxY = alturaJanela - botaoNao.offsetHeight;
+
+      var aleatorioX = Math.floor(Math.random() * maxX);
+      var aleatorioY = Math.floor(Math.random() * maxY);
+
+      botaoNao.style.left = aleatorioX + "px";
+      botaoNao.style.top = aleatorioY + "px"; 
+
+    }
+
+              //aqui após o click no sim, o alerta da aba abre, e transmite uma mensagem
+    function parabens(){
+      
+      alert("Ownt, q fofinha, eu aceito seu pedido de namoro ent.");
+
+    //esse aqui é opcional, eu criei pra ele abrir um vídeo após o clicar ok no aviso, mas vc pode improvisar só deixar sem
+        
+        const win = window.open('https://www.youtube.com/shorts/G2zQNNA3oGk')
+        win.focus()
+        
+    //é óbvio q eu n botei um sapo paysandu pra abrir quando enviei pra ela, dexei como exemplo
+    }
+
+  </script>
+
+
+
+</body>
+</html>
